@@ -1,26 +1,5 @@
-<!-- <template>
-    <WeatherLayout>
-        <v-row>
-       <v-col><h1>Weather Cities</h1></v-col>
-    </v-row>
-    </WeatherLayout>
-  </template>
-  
-<script>
-import WeatherLayout from "@/components/WeatherLayout.vue";
-
-
-export default {
-    name: "WeatherCities",
-  components: {
-    WeatherLayout,
-  },
-};
-</script> -->
-
 <template>
     <v-container>
-      <!-- ฟอร์มกรอกชื่อเมือง -->
       <v-text-field
         v-model="city"
         label="กรอกชื่อเมือง"
@@ -28,8 +7,6 @@ export default {
         @keyup.enter="getWeather"
       />
       <v-btn color="primary" @click="getWeather">ดูสภาพอากาศ</v-btn>
-  
-      <!-- ถ้ามีข้อมูลแสดงผล -->
       <v-card v-if="weather" class="mt-4">
         <v-card-title>{{ weather.name }}</v-card-title>
         <v-card-subtitle>{{ weather.weather[0].description }}</v-card-subtitle>
@@ -43,8 +20,6 @@ export default {
           />
         </v-card-text>
       </v-card>
-  
-      <!-- ถ้าไม่พบข้อมูล -->
       <v-alert v-if="errorMessage" type="error" class="mt-4">{{ errorMessage }}</v-alert>
     </v-container>
   </template>
@@ -58,9 +33,8 @@ export default {
       const city = ref('')
       const weather = ref(null)
       const errorMessage = ref(null)
-      const apiKey = '2b13253ccb418d9f2420a6bc1344b41d' // 👉 ใส่ API Key ของคุณที่นี่
-  
-      // ฟังก์ชันเพื่อดึงข้อมูลสภาพอากาศ
+      const apiKey = '2b13253ccb418d9f2420a6bc1344b41d' 
+
       const getWeather = async () => {
         if (!city.value) {
           errorMessage.value = 'กรุณากรอกชื่อเมือง!'
@@ -91,8 +65,3 @@ export default {
     }
   }
   </script>
-  
-  <style scoped>
-  /* สามารถปรับแต่งสไตล์ได้ที่นี่ */
-  </style>
-  
