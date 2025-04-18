@@ -210,10 +210,9 @@ export default {
   },
   data() {
     return {
-      city: "Bangkok", // city เริ่มต้น
+      city: "Bangkok", 
       apiKey: "2b13253ccb418d9f2420a6bc1344b41d",
       weather: {
-        // เริ่มต้นให้มีค่า default เผื่อไว้ก่อนโหลด API
         coord: {},
         weather: [{ icon: "01d", description: "" }], 
         main: {},
@@ -237,7 +236,7 @@ export default {
     },
   },
   mounted() {
-    this.fetchWeather(); // โหลดข้อมูลเริ่มต้น
+    this.fetchWeather(); 
   },
 };
 </script>
