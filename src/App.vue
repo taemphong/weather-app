@@ -1,26 +1,37 @@
+<!-- <template>
+  <v-app>
+    <v-main>
+      <GetStarted/>
+    </v-main>
+    <router-view />
+  </v-app>
+</template> -->
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import GetStarted from './components/GetStart.vue'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
+    // GetStarted
+  },
+
+  data: () => ({
+    //
+  }),
 }
 </script>
 
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  font-family: 'Inria Sans', sans-serif;
 }
 </style>
